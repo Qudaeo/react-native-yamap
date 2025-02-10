@@ -65,7 +65,7 @@ type SearchFetcher = (query: string, options?: SearchOptions) => Promise<Array<Y
 type SearchPointFetcher = (point: Point, options?: SearchOptions) => Promise<Address>;
 declare const Search: {
     searchText: (query: string, figure?: FigureParams, options?: SearchOptions) => any;
-    searchPoint: (point: Point, zoom?: number, options?: SearchOptions) => Promise<Address[]>;
+    searchPoint: (point: Point, zoom?: number, options?: SearchOptions) => Promise<Address>;
     geocodePoint: SearchPointFetcher;
     geocodeAddress: SearchFetcher;
     resolveURI: SearchFetcher;
