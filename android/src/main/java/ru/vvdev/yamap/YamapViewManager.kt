@@ -221,7 +221,7 @@ class YamapViewManager internal constructor() : ViewGroupManager<YamapView>() {
         view: View,
         jsPoints: ReadableArray?,
         jsVehicles: ReadableArray?,
-        id: String
+        id: String?
     ) {
         if (jsPoints != null) {
             val points = ArrayList<Point?>()
@@ -237,7 +237,7 @@ class YamapViewManager internal constructor() : ViewGroupManager<YamapView>() {
 
             if (jsVehicles != null) {
                 for (i in 0 until jsVehicles.size()) {
-                    vehicles.add(jsVehicles.getString(i))
+                    vehicles.add(jsVehicles.getString(i) as String)
                 }
             }
 

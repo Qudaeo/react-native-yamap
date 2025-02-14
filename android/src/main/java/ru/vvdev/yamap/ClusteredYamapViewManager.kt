@@ -171,7 +171,7 @@ class ClusteredYamapViewManager internal constructor() : ViewGroupManager<Cluste
 
     @ReactProp(name = "clusteredMarkers")
     fun setClusteredMarkers(view: View, points: ReadableArray) {
-        castToYaMapView(view).setClusteredMarkers(points.toArrayList())
+        castToYaMapView(view).setClusteredMarkers(points.toArrayList() as ArrayList<Any>)
     }
 
     @ReactProp(name = "clusterColor")
@@ -230,7 +230,7 @@ class ClusteredYamapViewManager internal constructor() : ViewGroupManager<Cluste
         view: View,
         jsPoints: ReadableArray?,
         jsVehicles: ReadableArray?,
-        id: String
+        id: String?
     ) {
         if (jsPoints != null) {
             val points = ArrayList<Point?>()
@@ -243,7 +243,7 @@ class ClusteredYamapViewManager internal constructor() : ViewGroupManager<Cluste
             val vehicles = ArrayList<String>()
             if (jsVehicles != null) {
                 for (i in 0 until jsVehicles.size()) {
-                    vehicles.add(jsVehicles.getString(i))
+                    vehicles.add(jsVehicles.getString(i) as String)
                 }
             }
             castToYaMapView(view).findRoutes(points, vehicles, id)
