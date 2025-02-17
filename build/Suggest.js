@@ -18,7 +18,7 @@ var SuggestTypes;
      * Mass transit routes.
      */
     SuggestTypes[SuggestTypes["YMKSuggestTypeTransit"] = 4] = "YMKSuggestTypeTransit";
-})(SuggestTypes = exports.SuggestTypes || (exports.SuggestTypes = {}));
+})(SuggestTypes || (exports.SuggestTypes = SuggestTypes = {}));
 const suggest = (query, options) => {
     if (options) {
         return YamapSuggests.suggestWithOptions(query, options);
