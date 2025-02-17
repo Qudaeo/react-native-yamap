@@ -54,7 +54,6 @@ var YaMap = /** @class */ (function (_super) {
     __extends(YaMap, _super);
     function YaMap() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        // @ts-ignore
         _this.map = react_1.default.createRef();
         return _this;
     }

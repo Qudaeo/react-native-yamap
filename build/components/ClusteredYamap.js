@@ -55,7 +55,6 @@ var ClusteredYamap = /** @class */ (function (_super) {
     __extends(ClusteredYamap, _super);
     function ClusteredYamap() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        // @ts-ignore
         _this.map = react_1.default.createRef();
         return _this;
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ViewProps, ImageSourcePropType, NativeSyntheticEvent, ListRenderItemInfo } from 'react-native';
+import { ViewProps, ImageSourcePropType, NativeSyntheticEvent, ListRenderItemInfo, NativeMethods } from 'react-native';
 import { Animation, Point, DrivingInfo, MasstransitInfo, RoutesFoundEvent, Vehicles, CameraPosition, VisibleRegion, ScreenPoint, MapLoaded, InitialRegion, YandexLogoPosition, YandexLogoPadding } from '../interfaces';
 export interface ClusteredYaMapProps<T = any> extends ViewProps {
     userLocationIcon?: ImageSourcePropType;
@@ -41,7 +41,9 @@ export declare class ClusteredYamap extends React.Component<ClusteredYaMapProps>
         clusterColor: string;
         maxFps: number;
     };
-    map: React.RefObject<YaMapNativeComponent>;
+    map: React.RefObject<(React.Component<Omit<ClusteredYaMapProps<any>, "clusteredMarkers"> & {
+        clusteredMarkers: Point[];
+    }, {}, any> & Readonly<NativeMethods>) | null>;
     static ALL_MASSTRANSIT_VEHICLES: Vehicles[];
     static init(apiKey: string): Promise<void>;
     static setLocale(locale: string): Promise<void>;

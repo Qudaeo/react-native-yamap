@@ -1,5 +1,5 @@
 import React from 'react';
-import { ViewProps, ImageSourcePropType, NativeSyntheticEvent } from 'react-native';
+import { ViewProps, ImageSourcePropType, NativeSyntheticEvent, NativeMethods } from 'react-native';
 import { Point, ScreenPoint, DrivingInfo, MasstransitInfo, RoutesFoundEvent, Vehicles, CameraPosition, VisibleRegion, InitialRegion, Animation, MapLoaded, YandexLogoPosition, YandexLogoPadding } from '../interfaces';
 export interface YaMapProps extends ViewProps {
     userLocationIcon?: ImageSourcePropType;
@@ -32,7 +32,7 @@ export declare class YaMap extends React.Component<YaMapProps> {
         clusterColor: string;
         maxFps: number;
     };
-    map: React.RefObject<YaMapNativeComponent>;
+    map: React.RefObject<(React.Component<YaMapProps, {}, any> & Readonly<NativeMethods>) | null>;
     static ALL_MASSTRANSIT_VEHICLES: Vehicles[];
     static init(apiKey: string): Promise<void>;
     static setLocale(locale: string): Promise<void>;
