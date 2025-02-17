@@ -67,7 +67,7 @@ declare const Search: {
     searchText: (query: string, figure?: FigureParams, options?: SearchOptions) => any;
     searchPoint: (point: Point, zoom?: number, options?: SearchOptions) => Promise<Address>;
     geocodePoint: SearchPointFetcher;
-    geocodeAddress: SearchFetcher;
+    geocodeAddress: (address: string) => Promise<Point>;
     resolveURI: SearchFetcher;
     searchByURI: SearchFetcher;
 };
