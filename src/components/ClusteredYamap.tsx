@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
   Platform,
   requireNativeComponent,
@@ -8,7 +8,8 @@ import {
   ViewProps,
   ImageSourcePropType,
   NativeSyntheticEvent,
-  ListRenderItemInfo
+  ListRenderItemInfo,
+  NativeMethods,
 } from 'react-native';
 // @ts-ignore
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
@@ -71,8 +72,10 @@ export class ClusteredYamap extends React.Component<ClusteredYaMapProps> {
     maxFps: 60
   };
 
-  // @ts-ignore
-  map = React.createRef<YaMapNativeComponent>();
+  map = React.createRef<
+    Component<Omit<ClusteredYaMapProps, "clusteredMarkers"> & { clusteredMarkers: Point[] }, {}, any> &
+    Readonly<NativeMethods>
+  >();
 
   static ALL_MASSTRANSIT_VEHICLES: Vehicles[] = [
     'bus',

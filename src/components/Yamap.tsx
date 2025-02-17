@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
   Platform,
   requireNativeComponent,
@@ -7,7 +7,8 @@ import {
   findNodeHandle,
   ViewProps,
   ImageSourcePropType,
-  NativeSyntheticEvent
+  NativeSyntheticEvent,
+  NativeMethods,
 } from 'react-native';
 // @ts-ignore
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
@@ -66,8 +67,7 @@ export class YaMap extends React.Component<YaMapProps> {
     maxFps: 60
   };
 
-  // @ts-ignore
-  map = React.createRef<YaMapNativeComponent>();
+  map = React.createRef<Component<YaMapProps, {}, any> & Readonly<NativeMethods>>();
 
   static ALL_MASSTRANSIT_VEHICLES: Vehicles[] = [
     'bus',
