@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GeoFigureType = exports.SearchTypesSnippets = exports.SearchTypes = void 0;
-var react_native_1 = require("react-native");
-var YamapSearch = react_native_1.NativeModules.YamapSearch;
+const react_native_1 = require("react-native");
+const { YamapSearch } = react_native_1.NativeModules;
 var SearchTypes;
 (function (SearchTypes) {
     SearchTypes[SearchTypes["YMKSearchTypeUnspecified"] = 0] = "YMKSearchTypeUnspecified";
@@ -40,31 +40,31 @@ var GeoFigureType;
     GeoFigureType["POLYLINE"] = "POLYLINE";
     GeoFigureType["POLYGON"] = "POLYGON";
 })(GeoFigureType = exports.GeoFigureType || (exports.GeoFigureType = {}));
-var searchText = function (query, figure, options) {
+const searchText = (query, figure, options) => {
     return YamapSearch.searchByAddress(query, figure, options);
 };
-var searchPoint = function (point, zoom, options) {
+const searchPoint = (point, zoom, options) => {
     return YamapSearch.searchByPoint(point, zoom, options);
 };
-var resolveURI = function (uri, options) {
+const resolveURI = (uri, options) => {
     return YamapSearch.resolveURI(uri, options);
 };
-var searchByURI = function (uri, options) {
+const searchByURI = (uri, options) => {
     return YamapSearch.searchByURI(uri, options);
 };
-var geocodePoint = function (point) {
+const geocodePoint = (point) => {
     return YamapSearch.geoToAddress(point);
 };
-var geocodeAddress = function (address) {
+const geocodeAddress = (address) => {
     return YamapSearch.addressToGeo(address);
 };
-var Search = {
-    searchText: searchText,
-    searchPoint: searchPoint,
-    geocodePoint: geocodePoint,
-    geocodeAddress: geocodeAddress,
-    resolveURI: resolveURI,
-    searchByURI: searchByURI
+const Search = {
+    searchText,
+    searchPoint,
+    geocodePoint,
+    geocodeAddress,
+    resolveURI,
+    searchByURI
 };
 exports.default = Search;
 //# sourceMappingURL=Search.js.map
