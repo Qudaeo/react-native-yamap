@@ -103,7 +103,7 @@ const geocodePoint: SearchPointFetcher = (point: Point) => {
   return YamapSearch.geoToAddress(point);
 }
 
-const geocodeAddress: SearchFetcher = (address: string) => {
+const geocodeAddress = (address: string): Promise<Point> => {
   return YamapSearch.addressToGeo(address);
 }
 
