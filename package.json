@@ -5,8 +5,9 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
-    "prepublishOnly": "rm -rf build && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "bob build",
+    "release": "release-it"
   },
   "homepage": "https://github.com/volga-volga/react-native-yamap",
   "keywords": [
@@ -25,14 +26,56 @@
     "geocoder"
   ],
   "author": "Nikita Sirotkin",
-  "license": "",
+  "license": "MIT",
   "devDependencies": {
     "@types/react": "*",
     "@types/react-native": "*",
+    "react-native-builder-bob": "0.37.0",
+    "release-it": "18.1.2",
     "typescript": "5.7.3"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
-  }
+  },
+  "react-native": "src/index.ts",
+  "source": "src/index.ts",
+  "files": [
+    "src",
+    "build",
+    "android",
+    "ios",
+    "*.podspec",
+    "tsconfig.json",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!ios/RNYamap.xcodeproj/project.xcworkspace",
+    "!ios/RNYamap.xcodeproj/xcuserdata",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "build",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
 }

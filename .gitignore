@@ -42,3 +42,11 @@ local.properties
 buck-out/
 \.buckd/
 *.keystore
+
+/android/build/
+/example/android/app/build/
+/example/android/build/
+/example/ios/.xcode.env.local
+/example/src/config.ts
+/example/ios/build/
+/example/ios/Pods/
