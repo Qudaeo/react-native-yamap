@@ -1,0 +1,1 @@
+{"version":3,"file":"Query.d.ts","sourceRoot":"","sources":["../../../src/geocoding/Query.ts"],"names":[],"mappings":"AAAA,UAAU,MAAM;IACd,CAAC,GAAG,EAAE,MAAM,GAAG,MAAM,GAAG,MAAM,GAAG,OAAO,GAAG,SAAS,GAAG,IAAI,CAAC;CAC7D;AAMD,MAAM,CAAC,OAAO,OAAO,KAAK;IACxB,OAAO,CAAC,KAAK,CAAa;gBAEd,IAAI,EAAE,MAAM;IAIjB,aAAa,IAAI,MAAM;CAU/B"}

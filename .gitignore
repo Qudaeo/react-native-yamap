@@ -50,4 +50,3 @@ buck-out/
 /example/src/config.ts
 /example/ios/build/
 /example/ios/Pods/
-/lib/
