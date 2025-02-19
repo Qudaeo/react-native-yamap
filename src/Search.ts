@@ -1,6 +1,5 @@
-import { BoundingBox, Point } from './interfaces';
+import { Address, BoundingBox, Point } from './interfaces';
 import { NativeModules } from 'react-native';
-import { Address } from './geocoding';
 
 const { YamapSearch } = NativeModules;
 

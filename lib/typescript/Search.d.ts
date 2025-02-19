@@ -1,5 +1,4 @@
-import { BoundingBox, Point } from './interfaces';
-import { Address } from './geocoding';
+import { Address, BoundingBox, Point } from './interfaces';
 export type YamapSearch = {
     title: string;
     subtitle?: string;

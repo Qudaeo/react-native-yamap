@@ -101,3 +101,10 @@ export type YandexLogoPadding = {
   horizontal?: number;
   vertical?: number;
 }
+
+export interface Address {
+  country_code: string;
+  formatted: string;
+  postal_code: string;
+  Components: {kind: string, name: string}[];
+}

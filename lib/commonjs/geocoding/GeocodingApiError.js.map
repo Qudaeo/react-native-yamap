@@ -1,1 +1,0 @@
-{"version":3,"names":["GeocodingApiError","Error","constructor","response","yandexResponse","exports"],"sourceRoot":"../../../src","sources":["geocoding/GeocodingApiError.ts"],"mappings":";;;;;;AAAO,MAAMA,iBAAiB,SAASC,KAAK,CAAC;EAG3CC,WAAWA,CAACC,QAAa,EAAE;IACzB,KAAK,CAAC,WAAW,CAAC;IAClB,IAAI,CAACC,cAAc,GAAGD,QAAQ;EAChC;AACF;AAACE,OAAA,CAAAL,iBAAA,GAAAA,iBAAA","ignoreList":[]}

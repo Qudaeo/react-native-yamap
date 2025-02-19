@@ -1,1 +1,0 @@
-{"version":3,"file":"GeocodingApiError.d.ts","sourceRoot":"","sources":["../../../src/geocoding/GeocodingApiError.ts"],"names":[],"mappings":"AAAA,qBAAa,iBAAkB,SAAQ,KAAK;IAC1C,QAAQ,CAAC,cAAc,EAAE,GAAG,CAAC;gBAEjB,QAAQ,EAAE,GAAG;CAI1B"}
