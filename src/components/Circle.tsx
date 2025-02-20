@@ -19,7 +19,7 @@ const NativeCircleComponent = requireNativeComponent<CircleProps>('YamapCircle')
 
 export const Circle: FC<CircleProps> = (props) => {
   const processedProps = useMemo(() =>
-    getProcessedColors(props, ['fillColor', 'strokeColor']),
+    getProcessedColors(props, ['fillColor', 'strokeColor']) as CircleProps,
     [props]
   );
 

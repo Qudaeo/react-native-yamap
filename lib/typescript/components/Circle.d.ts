@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Point } from '../interfaces';
 export interface CircleProps {
     fillColor?: string;
@@ -11,8 +11,5 @@ export interface CircleProps {
     children?: undefined;
     handled?: boolean;
 }
-export declare class Circle extends React.Component<CircleProps> {
-    static defaultProps: {};
-    render(): React.JSX.Element;
-}
+export declare const Circle: FC<CircleProps>;
 //# sourceMappingURL=Circle.d.ts.map

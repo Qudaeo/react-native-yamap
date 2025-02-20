@@ -9,7 +9,7 @@ export function processColorProps<T>(props: T, name: keyof T) {
   }
 }
 
-export const getProcessedColors = (props: object, colorProps: string[]) => {
+export const getProcessedColors = (props: { [key: string]: any }, colorProps: string[]) => {
   const _props = {...props};
 
   colorProps.forEach(name => {
