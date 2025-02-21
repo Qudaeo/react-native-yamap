@@ -1,6 +1,6 @@
 import React from 'react';
-import { ImageSourcePropType } from 'react-native';
-import { Point } from '../interfaces';
+import { type ImageSourcePropType } from 'react-native';
+import type { Point, Anchor } from '../interfaces';
 export interface MarkerProps {
     children?: React.ReactElement;
     zIndex?: number;
@@ -9,32 +9,13 @@ export interface MarkerProps {
     onPress?: () => void;
     point: Point;
     source?: ImageSourcePropType;
-    anchor?: {
-        x: number;
-        y: number;
-    };
+    anchor?: Anchor;
     visible?: boolean;
     handled?: boolean;
 }
-interface State {
-    recreateKey: boolean;
-    children: any;
+export interface MarkerRef {
+    animatedMoveTo: (coords: Point, duration: number) => void;
+    animatedRotateTo: (angle: number, duration: number) => void;
 }
-export declare class Marker extends React.Component<MarkerProps, State> {
-    static defaultProps: {
-        rotated: boolean;
-    };
-    state: {
-        recreateKey: boolean;
-        children: React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | undefined;
-    };
-    private getCommand;
-    static getDerivedStateFromProps(nextProps: MarkerProps, prevState: State): Partial<State>;
-    private resolveImageUri;
-    private getProps;
-    animatedMoveTo(coords: Point, duration: number): void;
-    animatedRotateTo(angle: number, duration: number): void;
-    render(): React.JSX.Element;
-}
-export {};
+export declare const Marker: React.ForwardRefExoticComponent<MarkerProps & React.RefAttributes<MarkerRef>>;
 //# sourceMappingURL=Marker.d.ts.map

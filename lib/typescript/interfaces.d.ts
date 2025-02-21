@@ -95,4 +95,8 @@ export interface Address {
         name: string;
     }[];
 }
+export interface Anchor {
+    x: number;
+    y: number;
+}
 //# sourceMappingURL=interfaces.d.ts.map

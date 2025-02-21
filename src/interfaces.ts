@@ -108,3 +108,8 @@ export interface Address {
   postal_code: string;
   Components: {kind: string, name: string}[];
 }
+
+export interface Anchor {
+  x: number;
+  y: number;
+}
