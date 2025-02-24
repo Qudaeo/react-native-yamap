@@ -1,6 +1,7 @@
 import React, {useRef, useState} from "react";
 import {Platform, StyleSheet} from "react-native";
 import YaMap, {Circle, Marker, MarkerRef} from "../../../";
+import {Polygon} from "../../../src";
 
 export const MapScreen = () => {
   const [mapLoaded, setMapLoaded] = useState(false)
@@ -37,6 +38,19 @@ export const MapScreen = () => {
           angleRef.current = angleRef.current + 180
           markerRef.current?.animatedRotateTo(angleRef.current, 300)
         }}
+      />
+      <Polygon
+        points={
+          [
+            {lat: 55.74, lon: 37.57},
+            {lat: 55.7, lon: 37.6},
+            {lat: 55.72, lon: 37.64},
+            {lat: 55.77, lon: 37.64},
+          ]
+        }
+        fillColor={'green'}
+        strokeWidth={0}
+        handled={false}
       />
     </YaMap>
   )

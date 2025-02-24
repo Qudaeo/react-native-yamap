@@ -11,7 +11,6 @@ export interface CircleProps {
   onPress?: () => void;
   center: Point;
   radius: number;
-  children?: undefined;
   handled?: boolean;
 }
 
