@@ -8,7 +8,6 @@ export interface CircleProps {
     onPress?: () => void;
     center: Point;
     radius: number;
-    children?: undefined;
     handled?: boolean;
 }
 export declare const Circle: FC<CircleProps>;

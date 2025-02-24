@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Point } from '../interfaces';
 export interface PolygonProps {
     fillColor?: string;
@@ -8,13 +8,7 @@ export interface PolygonProps {
     onPress?: () => void;
     points: Point[];
     innerRings?: (Point[])[];
-    children?: undefined;
     handled?: boolean;
 }
-export declare class Polygon extends React.Component<PolygonProps> {
-    static defaultProps: {
-        innerRings: never[];
-    };
-    render(): React.JSX.Element;
-}
+export declare const Polygon: FC<PolygonProps>;
 //# sourceMappingURL=Polygon.d.ts.map
