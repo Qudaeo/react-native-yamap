@@ -1,7 +1,6 @@
 package ru.vvdev.yamap
 
 import com.facebook.react.bridge.ReadableMap
-import com.facebook.react.common.MapBuilder
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.ViewGroupManager
 import com.facebook.react.uimanager.annotations.ReactProp
@@ -14,15 +13,15 @@ class YamapCircleManager internal constructor() : ViewGroupManager<YamapCircle>(
         return REACT_CLASS
     }
 
-    override fun getExportedCustomDirectEventTypeConstants(): Map<String, Any>? {
-        return MapBuilder.builder<String, Any>()
-            .put("onPress", MapBuilder.of("registrationName", "onPress"))
-            .build()
+    override fun getExportedCustomDirectEventTypeConstants(): Map<String, Any> {
+        return mapOf(
+            "onPress" to
+                    mapOf("registrationName" to "onPress")
+        )
     }
 
-    override fun getExportedCustomBubblingEventTypeConstants(): MutableMap<String, Any>? {
-        return MapBuilder.builder<String, Any>()
-            .build()
+    override fun getExportedCustomBubblingEventTypeConstants(): MutableMap<String, Any> {
+        return mutableMapOf()
     }
 
     @Nonnull

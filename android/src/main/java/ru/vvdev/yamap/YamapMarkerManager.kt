@@ -4,7 +4,6 @@ import android.graphics.PointF
 import android.view.View
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.ReadableMap
-import com.facebook.react.common.MapBuilder
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.ViewGroupManager
 import com.facebook.react.uimanager.annotations.ReactProp
@@ -17,15 +16,15 @@ class YamapMarkerManager internal constructor() : ViewGroupManager<YamapMarker>(
         return REACT_CLASS
     }
 
-    override fun getExportedCustomDirectEventTypeConstants(): Map<String, Any>? {
-        return MapBuilder.builder<String, Any>()
-            .put("onPress", MapBuilder.of("registrationName", "onPress"))
-            .build()
+    override fun getExportedCustomDirectEventTypeConstants(): Map<String, Any> {
+        return mapOf(
+            "onPress" to
+                    mapOf("registrationName" to "onPress")
+        )
     }
 
-    override fun getExportedCustomBubblingEventTypeConstants(): MutableMap<String, Any>? {
-        return MapBuilder.builder<String, Any>()
-            .build()
+    override fun getExportedCustomBubblingEventTypeConstants(): MutableMap<String, Any> {
+        return mutableMapOf()
     }
 
     private fun castToMarkerView(view: View): YamapMarker {

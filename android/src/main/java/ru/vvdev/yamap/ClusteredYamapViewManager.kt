@@ -4,7 +4,6 @@ import android.view.View
 import com.facebook.infer.annotation.Assertions
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.ReadableMap
-import com.facebook.react.common.MapBuilder
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.ViewGroupManager
 import com.facebook.react.uimanager.annotations.ReactProp
@@ -19,88 +18,78 @@ class ClusteredYamapViewManager internal constructor() : ViewGroupManager<Cluste
         return REACT_CLASS
     }
 
-    override fun getExportedCustomDirectEventTypeConstants(): Map<String, Any>? {
-        return MapBuilder.builder<String, Any>()
-            .build()
+    override fun getExportedCustomDirectEventTypeConstants(): Map<String, Any> {
+        return mapOf()
     }
 
-    override fun getExportedCustomBubblingEventTypeConstants(): MutableMap<String, Any>? {
-        return MapBuilder.builder<String, Any>()
-            .put(
-                "routes",
-                MapBuilder.of("phasedRegistrationNames", MapBuilder.of("bubbled", "onRouteFound"))
-            )
-            .put(
-                "cameraPosition",
-                MapBuilder.of(
-                    "phasedRegistrationNames",
-                    MapBuilder.of("bubbled", "onCameraPositionReceived")
-                )
-            )
-            .put(
-                "cameraPositionChange",
-                MapBuilder.of(
-                    "phasedRegistrationNames",
-                    MapBuilder.of("bubbled", "onCameraPositionChange")
-                )
-            )
-            .put(
-                "cameraPositionChangeEnd",
-                MapBuilder.of(
-                    "phasedRegistrationNames",
-                    MapBuilder.of("bubbled", "onCameraPositionChangeEnd")
-                )
-            )
-            .put(
-                "visibleRegion",
-                MapBuilder.of(
-                    "phasedRegistrationNames",
-                    MapBuilder.of("bubbled", "onVisibleRegionReceived")
-                )
-            )
-            .put(
-                "onMapPress",
-                MapBuilder.of("phasedRegistrationNames", MapBuilder.of("bubbled", "onMapPress"))
-            )
-            .put(
-                "onMapLongPress",
-                MapBuilder.of("phasedRegistrationNames", MapBuilder.of("bubbled", "onMapLongPress"))
-            )
-            .put(
-                "onMapLoaded",
-                MapBuilder.of("phasedRegistrationNames", MapBuilder.of("bubbled", "onMapLoaded"))
-            )
-            .put(
-                "screenToWorldPoints",
-                MapBuilder.of(
-                    "phasedRegistrationNames",
-                    MapBuilder.of("bubbled", "onScreenToWorldPointsReceived")
-                )
-            )
-            .put(
-                "worldToScreenPoints",
-                MapBuilder.of(
-                    "phasedRegistrationNames",
-                    MapBuilder.of("bubbled", "onWorldToScreenPointsReceived")
-                )
-            )
-            .build()
+    override fun getExportedCustomBubblingEventTypeConstants(): MutableMap<String, Any> {
+        return mutableMapOf(
+            "routes" to
+                    mapOf(
+                        "phasedRegistrationNames" to
+                                mapOf("bubbled" to "onRouteFound")
+                    ),
+            "cameraPosition" to
+                    mapOf(
+                        "phasedRegistrationNames" to
+                                mapOf("bubbled" to "onCameraPositionReceived")
+                    ),
+            "cameraPositionChange" to
+                    mapOf(
+                        "phasedRegistrationNames" to
+                                mapOf("bubbled" to "onCameraPositionChange")
+                    ),
+            "cameraPositionChangeEnd" to
+                    mapOf(
+                        "phasedRegistrationNames" to
+                                mapOf("bubbled" to "onCameraPositionChangeEnd")
+                    ),
+            "visibleRegion" to
+                    mapOf(
+                        "phasedRegistrationNames" to
+                                mapOf("bubbled" to "onVisibleRegionReceived")
+                    ),
+            "onMapPress" to
+                    mapOf(
+                        "phasedRegistrationNames" to
+                                mapOf("bubbled" to "onMapPress")
+                    ),
+            "onMapLongPress" to
+                    mapOf(
+                        "phasedRegistrationNames" to
+                                mapOf("bubbled" to "onMapLongPress")
+                    ),
+            "onMapLoaded" to
+                    mapOf(
+                        "phasedRegistrationNames" to
+                                mapOf("bubbled" to "onMapLoaded")
+                    ),
+            "screenToWorldPoints" to
+                    mapOf(
+                        "phasedRegistrationNames" to
+                                mapOf("bubbled" to "onScreenToWorldPointsReceived")
+                    ),
+            "worldToScreenPoints" to
+                    mapOf(
+                        "phasedRegistrationNames" to
+                                mapOf("bubbled" to "onWorldToScreenPointsReceived")
+                    ),
+        )
     }
 
-    override fun getCommandsMap(): Map<String, Int>? {
-        val map: MutableMap<String, Int> = MapBuilder.newHashMap()
-        map["setCenter"] = SET_CENTER
-        map["fitAllMarkers"] = FIT_ALL_MARKERS
-        map["findRoutes"] = FIND_ROUTES
-        map["setZoom"] = SET_ZOOM
-        map["getCameraPosition"] = GET_CAMERA_POSITION
-        map["getVisibleRegion"] = GET_VISIBLE_REGION
-        map["setTrafficVisible"] = SET_TRAFFIC_VISIBLE
-        map["fitMarkers"] = FIT_MARKERS
-        map["getScreenPoints"] = GET_SCREEN_POINTS
-        map["getWorldPoints"] = GET_WORLD_POINTS
-
-        return map
+    override fun getCommandsMap(): Map<String, Int> {
+        return mapOf(
+            "setCenter" to SET_CENTER,
+            "fitAllMarkers" to FIT_ALL_MARKERS,
+            "findRoutes" to FIND_ROUTES,
+            "setZoom" to SET_ZOOM,
+            "getCameraPosition" to GET_CAMERA_POSITION,
+            "getVisibleRegion" to GET_VISIBLE_REGION,
+            "setTrafficVisible" to SET_TRAFFIC_VISIBLE,
+            "fitMarkers" to FIT_MARKERS,
+            "getScreenPoints" to GET_SCREEN_POINTS,
+            "getWorldPoints" to GET_WORLD_POINTS,
+        )
     }
 
     override fun receiveCommand(
