@@ -1,5 +1,5 @@
 {
-  "name": "react-native-yamap",
+  "name": "react-native-yamap-plus",
   "version": "4.8.3",
   "description": "Yandex.MapKit and Yandex.Geocoder for react-native",
   "main": "lib/commonjs/index",
@@ -10,7 +10,7 @@
     "prepare": "bob build",
     "release": "release-it"
   },
-  "homepage": "https://github.com/volga-volga/react-native-yamap",
+  "homepage": "https://github.com/qudaeo/react-native-yamap",
   "keywords": [
     "react-native",
     "mapkit",
