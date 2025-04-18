@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         compileSdkVersion 35
-        minSdkVersion 23
+        minSdkVersion 21
         targetSdkVersion 35
     }
     lintOptions {
